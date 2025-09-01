@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Hackeado</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 3rem;
+      animation: blink 0.8s infinite;
+    }
+    #terminal {
+      width: 90%;
+      max-width: 800px;
+      height: 60vh;
+      background-color: #000000;
+      border: 2px solid #00ff00;
+      padding: 20px;
+      overflow-y: auto;
+      font-size: 16px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔓 SISTEMA HACKEADO POR OLI</h1>
+  <div id="terminal"></div>
+
+  <script>
+    const terminal = document.getElementById("terminal");
+    const messages = [
+      "Conectando a servidor...",
+      "Bypassing firewall...",
+      "Acceso no autorizado concedido.",
+      "Extrayendo datos confidenciales...",
+      "Ubicación: 127.0.0.1",
+      "Hack completo. 😎",
+      "Mensaje: ¡Saludos desde OLI!"
+    ];
+
+    let index = 0;
+
+    function typeMessage() {
+      if (index < messages.length) {
+        const line = document.createElement("div");
+        line.textContent = messages[index];
+        terminal.appendChild(line);
+        terminal.scrollTop = terminal.scrollHeight;
+        index++;
+        setTimeout(typeMessage, 1000);
+      }
+    }
+
+    typeMessage();
+  </script>
+</body>
+</html>
